@@ -23,11 +23,6 @@
 		<h3>Students Details</h3>
 		<hr>
 		<!-- Add a search form -->
-
-
-
-
-
 		<form action="/CollegeFestDebate/students/search" class="form-inline">
 
 			<!-- Add a button -->
@@ -61,8 +56,8 @@
 				<c:forEach items="${Students}" var="tempStudent">
 					<tr>
 						<td><c:out value="${tempStudent.id}" /></td>
-						<td><c:out value="${tempStudent.firstname}" /></td>
-						<td><c:out value="${tempStudent.lastname}" /></td>
+						<td><c:out value="${tempStudent.firstName}" /></td>
+						<td><c:out value="${tempStudent.lastName}" /></td>
 						<td><c:out value="${tempStudent.course}" /></td>
 						<td><c:out value="${tempStudent.country}" /></td>
 						<td>
@@ -88,24 +83,3 @@
 </body>
 </html>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-</html>

@@ -1,8 +1,10 @@
 package com.greatlearning.CollegeFestDebate.service;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.greatlearning.CollegeFestDebate.entity.Student;
 import com.greatlearning.CollegeFestDebate.repository.StudentRepository;
 
@@ -36,8 +38,7 @@ public class StudentServiceImpl implements StudentService {
 
 	@Override
 	public List<Student> searchBy(String firstname, String country) {
-		List<Student> students = studentRepository.findByNameContainsAndCountryContainsAllIgnoreCase(firstname,
-				country);
+		List<Student> students = studentRepository.findByNameContainsAndCountryContainsAllIgnoreCase(firstname,country);
 		return students;
 	}
 

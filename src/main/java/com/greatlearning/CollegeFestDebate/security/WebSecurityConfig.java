@@ -42,16 +42,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 
 		http.authorizeRequests()
-				.antMatchers("/", "/students/save", "/students/list", "/students/showFormForAdd", "/students/search",
-						"/students/403")
-				.hasAnyAuthority("USER", "ADMIN").antMatchers("/students/showFormForUpdate", "/students/delete")
-				.hasAuthority("ADMIN").anyRequest().authenticated().and().formLogin().loginProcessingUrl("/login")
-				.successForwardUrl("/students/list").permitAll().and().logout().logoutSuccessUrl("/login").permitAll()
+				.antMatchers("/", "/students/save", "/students/list", "/students/showFormForAdd", "/students/search", "/students/403").hasAnyAuthority("USER", "ADMIN")
+				.antMatchers("/students/showFormForUpdate", "/students/delete").hasAuthority("ADMIN")
+				.anyRequest().authenticated()
 				.and()
-				.exceptionHandling()
-				.accessDeniedPage("/students/403")
+				.formLogin().loginProcessingUrl("/login")
+				.successForwardUrl("/students/list").permitAll()
 				.and()
-				.cors()
-				.and().csrf().disable();
+				.logout().logoutSuccessUrl("/login").permitAll()
+				.and()
+				.exceptionHandling().accessDeniedPage("/students/403")
+				.and()
+				.cors().and().csrf().disable();
 	}
 }

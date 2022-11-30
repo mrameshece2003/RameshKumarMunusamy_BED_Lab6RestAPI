@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.greatlearning.CollegeFestDebate.entity.Student;
 
 @Repository
-public interface StudentRepository extends JpaRepository<Student, Integer>  {
+public interface StudentRepository extends JpaRepository<Student, Integer>{
+	
 	List<Student> findByNameContainsAndCountryContainsAllIgnoreCase(String firstname, String country);	
 }

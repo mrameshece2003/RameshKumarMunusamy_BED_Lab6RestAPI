@@ -102,7 +102,7 @@ public class StudentsController {
 			return "redirect:/students/list";
 		} else {
 			// else, search by first name and last name
-			List<Student> theStudents = studentService.searchBy(firstname, country);
+			List<Student> theStudents = studentService.searchBy(firstname,country);
 			// add to the spring model
 			theModel.addAttribute("Students", theStudents);
 
